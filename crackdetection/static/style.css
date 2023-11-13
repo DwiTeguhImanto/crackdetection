@@ -1,0 +1,315 @@
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling Navbar */
+header {
+    background-color: #689783;
+    color: #fff;
+    padding: 20px 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} */
+
+.logo {
+    width: 80px;
+    font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+}
+
+.nav-item a {
+    display: inline;
+    margin-right: 20px;
+    font-size: large;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar {
+    background-color: #4e6d5d;
+}
+.navbar-nav .nav-link, .judul{
+    color: white !important;
+}
+
+/* Styling Sections */
+.section {
+    /* padding-bottom:80px ; */
+    padding-top: 50px;
+}
+
+.button-container {
+    text-align: center; /* Untuk mengatur tombol secara horizontal */
+}
+.button {
+    margin: 5px; /* Untuk memberi jarak antara tombol */
+}
+
+/* .container-fluid {
+    background-color: #689783;
+    padding: 20px 0;
+} */
+
+.container-fluid {
+    background-color: #4e6d5d;
+    padding: 20px;
+}
+
+/* Styling Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.container-fluid .judul1{
+    text-align: center;
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 50px;
+    font-weight: bold;
+    padding-top: 150px;
+}
+#subjudul1{
+    text-align: center;
+    color: #464646;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    
+}
+.card-title , .judul2 {
+    text-align: center;
+    color: #3a3a3a;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.card-title , .judul3{
+    text-align: center;
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+p {
+    text-align: justify;
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+label {
+    color: #3a3a3a;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.judulvm1 {
+    color: #4e6d5d;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 27px;
+}
+.judulvm {
+    color: #4e6d5d;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 2px;
+}
+.pvm {
+    color: #4e6d5d;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+#card {
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgba(58, 58, 58, 0.8);
+    padding: 10px;
+    /* border: 1px  grey; */
+}
+/* #card2 {
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgba(58, 58, 58, 0.8);
+    padding: 10px;
+    background-color: #84ccac;
+
+} */
+
+#card2 {
+    display: flex; /* Menggunakan tampilan flexbox untuk mengatur gambar dan teks sejajar */
+    align-items: center; /* Pusatkan elemen vertikal dalam kartu */
+    border-radius: 12px;
+    box-shadow: 5px 5px 5px rgba(58, 58, 58, 0.8);
+    padding: 10px;
+    background-color: #84ccac;
+}
+
+
+
+.pre {
+    margin: 0; /* Hapus margin bawaan */
+    color: #333;
+    font-weight: lighter;
+}
+
+/* content about */
+.container-iframe {
+    border-radius: 5px;
+}
+
+h4 {
+    font-family: 'Uchen','serif';
+}
+
+.frame iframe {
+    border-radius: 10px;
+}
+#about {
+    background-color: #4e6d5d;
+}
+.col-lg-1 {
+    background-color: #fff;
+}
+.col-lg-10 {
+    background-color: rgb(199, 197, 197);
+    
+}
+
+.caption {
+    padding-bottom: 250px;
+}
+
+/* card legendary menu*/
+#box .card {
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+#box .card:hover {
+    transform: translateY(-10px);
+}
+/* explore food css */
+/* .explore-food .card {
+    background: transparent;
+    border-radius: 0.9375rem;
+    border: .125rem dashed #3d7003;
+}
+.explore-food .card img {
+    border-radius: 0.9375rem 0.9375rem 0 0;
+    object-fit: cover;
+}
+.explore-food .card span {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #8BC34A;
+    padding-bottom: 1rem;
+    border-bottom: 0.0625rem solid #3d7003;
+}
+.explore-food .card span del {
+    color: #999;
+    margin-left: 1px
+} */
+.containerBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.group-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 700px;
+    /* padding: 30px; */
+}
+
+.member-card {
+    width: 30%;
+    /* height: 250px; */
+    margin: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 15px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    position: relative;
+    border: 2.5px solid #4e6d5d;
+}
+
+.member-card img {
+    max-width: 100%;
+    border-radius: 15px;
+    
+}
+
+.member-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* background-color: rgba(0, 0, 0, 0.8); */
+    color: #fff;
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+}
+.ket {
+    padding: 5px 10px 5px 10px;
+    background-color: #2b8b59;
+    border-radius: 50px;
+    margin: 5px;
+    text-align: center;
+}
+.ket2 {
+    padding: 5px 10px 5px 10px;
+    background-color: #2b8b59;
+    border-radius: 50px;
+    margin: 5px;
+    text-align: center;
+    font-size: 12px;
+}
+.row .judulteam{
+    text-align: center;
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    padding-top: 30px;
+}
+.row .o{
+    text-align: center;
+    color: rgb(199, 197, 197);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+
+#ijo {
+    background-color: #4e6d5d;
+}
+#judul2 {
+    font-size: 23px;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}

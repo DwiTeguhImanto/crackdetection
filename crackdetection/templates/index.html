@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Crack Detection 1</title>
+</head>
+<body>
+    <header>
+        <!-- <nav>
+            <div class="container">
+                <div class="logo mr-5">Logo</div>
+                <ul class="menu">
+                    <li><a href="#dashboard">Deskripsi Aplikasi</a></li>
+                    <li><a href="#main">Main Content</a></li>
+                    <li><a href="#team">Team</a></li>
+                    
+                </ul>
+            </div>
+        </nav> -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top " id="mainNav" >
+          <div class="container">
+            <a class="navbar-brand" href="index.html">
+              <img src="{{ url_for('static', filename='assets/logo.png') }}" class="logo" />
+              <!-- <img class="logo" src="../assets/logo.png" alt=""></a> -->
+              <a class="navbar-brand" href="#dashboard"><p class="judul mt-3"> Crack Detection</p></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto mr-5">
+                <li class="nav-item ">
+                  <a class="nav-link js-scroll-trigger" id="home" href="#main">Home </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="#about">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" href="#team">Our Team</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <a href="{{ url_for('registrasi') }}" class="btn btn-outline-light my-2 my-sm-0 mr-3">Sign Up</a>
+                <a href="{{ url_for('login') }}" class="btn btn-dark my-2 my-sm-0">Login</a>
+              </form>
+            </div>
+          </div>
+        </nav>
+    </header>
+
+    <!-- carousel -->
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row">
+          <img class="d-block " style="width: 1400px;" src="{{ url_for('static', filename='assets/bg2.jpg') }}" alt="First slide">
+          
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="caption">Temukan Retakan Bersama CRACKSAFE</h5>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end carousel -->
+
+    <!-- <section id="dashboard" class="">
+        <div class="container"> -->
+            <!-- Isi dari Dashboard Section -->
+                <!-- start nama section about -->
+                <div class="container-fluid p-5" id="dashboard" >
+                  <!-- <h1 class="judul1" >Temukan Retakan <br> Bersama <strong>CRACKSAFE</strong></h1>
+                  <p id="subjudul1">Teknologi pendeteksi retakan bangunan secara aman dan terpecaya, Temukan hunian impian anda</p> -->
+                  <div class="start align-content-center mt-5 pt-3">
+                  <h1 class="judul3 mt-5">Our Service</h1>
+                  <div class="row align-items-center mt-5 pb-5 mb-5">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-6">
+                      <div class="card w-100" id="card2">
+                        <h5 class="judul2 text-dark"><u><strong>Crack Detection</strong></u></h5>
+                        <div class="row justify-content-center p-2">
+                          <div class="col-2"><img src="{{ url_for('static', filename='assets/logocrack.png') }}" class="logo" /></div>
+                          <div class="col-10"><p class="pre mt-3"><bold>Solusi teknologi yang menggunakan kecerdasan buatan dan pemrosesan gambar untuk mengidentifikasi retakan pada struktur bangunan melalui gambar yang diunggah oleh pengguna.</bold></p></div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+                  </div>
+                 
+                </div>
+    <section id="main" class="section">
+        <div class="about-section wrapper">
+            <div class="container">
+                <div class="row align-items-center">
+                  
+                    <div class="col-lg-6 col-md-12 mb-lg-0 mb-5">
+                        <h3 class="judul2">Unggah Gambar</h3>
+                        <form method="post" action="/" enctype="multipart/form-data">
+                          {{ form.hidden_tag() }}
+                          {% for error in form.photo.errors %}
+                          <span style="color: red;">{{ error }}</span>
+                          {% endfor %}
+                          <div class="row justify-content-center">
+                            <div class="col-auto">
+                              {{ form.photo(class="form-control") }}
+                            </div>
+                            <!-- <div class="col-auto">
+                              {{ form.submit(class="btn btn-success mt-1") }}
+                            </div> -->
+                            
+                          </div>
+                          <div class="button-container p-3">
+                            <button class="btn btn-primary m-1" id="start-button">Start</button>
+                            <button class="btn btn-danger m-1" id="stop-button">Stop</button>
+                            {{ form.submit(class="btn btn-success m-1") }}
+                          </div>
+                        </form>
+                        {% if file_url %}
+                        <div class="mt-5">
+                          <img src="{{ file_url }}" style="width: 400px;">
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-lg-6 col-md-12 ps-lg-5">
+                        <h3 class="judul2" >Hasil Prediksi</h3>
+                        <form>
+                                <table class="table table-bordered">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">No</th>
+                                      <th scope="col">Sample Data</th>
+                                      <th scope="col">Tanggal</th>
+                                      <th scope="col">Prediksi</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th scope="row">1</th>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <!-- <div class="form-group mt-3">
+                                  <label class="mr-2" for="des">Jenis Keretakan : </label>
+                                    <input type="text" class="form-control" id="vst" name="vst" >
+                                </div> -->
+                                
+                                  <div class="form-group">
+                                      <label for="comment">Deskripsi :  </label>
+                                      <textarea name="" id="comment" rows="5" class="form-control" ></textarea>
+                                  </div>
+                          </div>
+                          </div>
+                            </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </section>
+    </section>
+
+    <!-- section about start-->
+    <section id="about" class="mt-5 ">
+      <div class="about-section wrapper">
+        <div class="container p-5">
+            <div class="row align-items-center">
+                
+                <div class="col-lg-6 col-md-12 ps-lg-5">
+                    <h2 class="judul3">About Us</h2>
+                    <p>Selamat datang di CRACKSAFE: Crack Recognition and Assessment for Residential Knowledge and Safety. Kami adalah pelopor dalam industri teknologi kecerdasan buatan, yang telah mengembangkan sistem inovatif untuk menilai kualitas dan keamanan bangunan dengan fokus pada identifikasi dan penilaian retakan pada dinding.</p>
+                </div>
+                <div class="col-lg-6 col-md-12 mb-lg-0 mb-5">
+                  <img src="{{ url_for('static', filename='assets/livingroom.jpg') }}" class="img-fluid" alt="">
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <!-- section about end -->
+
+    <div class="container">
+      <h5 class="judulvm1 p-2 mt-1"><u>VISI & MISI</u></h5>
+    </div>
+
+    <!-- visi misi start -->
+    <section id="about" class="">
+      <div class="about-section wrapper pb-5">
+        <div class="container p-5 ">
+            <div class="row align-items-center">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                  <div class="card w-100 mt-4" id="card">
+                    <div class="card-body">
+                    <h5 class="judulvm">VISI</h5>
+                    <p class="pvm">Menciptakan lingkungan perumahan yang lebih aman, sadar akan risiko, dan terpercaya melalui teknologi.</p>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="card w-100 mt-1" id="card">
+                    <div class="card-body">
+                    <h5 class="judulvm">MISI</h5>
+                    <p class="pvm">Memberdayakan para inspektur bangunan dengan sistem terdepan yang menggunakan kecerdasan buatan untuk mengidentifikasi, mengukur, dan memahami pola retakan pada dinding bangunan.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1" id="ijo"></div>
+        <div class="col-lg-10">
+          <h1 class="judulteam" >Our Team</h1>
+        </div>
+        <div class="col-lg-1" id="ijo"></div>
+      </div>
+        <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                  <p id="judul2">Teamwork <br> Make The Dream Work </p>
+                  <section class="food" id="food-explore">
+                    <div class="explore-food">
+                      <div class="containerBody">
+                        <div class="group-members">
+                          <div class="member-card">
+                              <img src="{{ url_for('static', filename='assets/Jasmet.jpg') }}" alt="Anggota 1">
+                              <div class="member-info">
+                                  <p class="ket">Rifqi</p>
+                                  <p class="ket2"></p>
+                              </div>
+                          </div>
+                          <div class="member-card">
+                              <img src="{{ url_for('static', filename='assets/Jasmet.png') }}" alt="Anggota 2">
+                              <div class="member-info">
+                                <p class="ket">Dwi Teguh Imanto</p>
+                                <p class="ket2">UPN "Veteran" Jawa Timur</p>
+                              </div>
+                          </div>
+                          <div class="member-card">
+                              <img src="{{ url_for('static', filename='assets/Marcella.jpg') }}" alt="Anggota 3">
+                              <div class="member-info">
+                                <p class="ket">Marcella Andriani M.</p>
+                                <p class="ket2">UPN "Veteran" Jawa Timur</p>
+                              </div>
+                          </div>
+                          <div class="member-card">
+                              <img src="{{ url_for('static', filename='assets/bella.png') }}" alt="Anggota 4">
+                              <div class="member-info">
+                                <p class="ket">Bella Pratiwi</p>
+                                <p class="ket2">Universitas Islam 45 Bekasi</p>
+                              </div>
+                          </div>
+                          <div class="member-card">
+                              <img src="{{ url_for('static', filename='assets/nindi.png') }}" alt="Anggota 5">
+                              <div class ="member-info">
+                                  <p class="ket">Nindi Saputri </p>
+                                  <p class="ket2"> Muhammadiyah Surakarta</p>
+                              </div>
+                          </div>
+                          <div class="member-card">
+                              <img src="{{ url_for('static', filename='assets/bella2.png') }}" alt="Anggota 6">
+                              <div class="member-info">
+                                <p class="ket">Dwi Teguh Imanto</p>
+                                <p class="ket2">UPN "Veteran" Jawa Timur</p>
+                              </div>
+                          </div>
+                      </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <div class="col-lg-1"></div>
+        </div>
+              <div class="row">
+                <div class="col-lg-1" id="ijo"></div>
+                <div class="col-lg-10">
+                  <h1 class="o" >o</h1>
+                </div>
+                <div class="col-lg-1" id="ijo"></div>
+              </div>
+    </section>
+    <!-- visi misi end -->
+    <section id="about" class="">
+      <div class="about-section wrapper p-2">
+        <div class="container p-4">
+        </div>
+      </div>
+    </section>
+    <footer>
+        <div class="container">
+            <span>&copy; 2023 : Ottoman Is One </span>
+        </div>
+    </footer>
+
+
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
